@@ -31,6 +31,8 @@ Click the [Use this template](https://github.com/AaronSaikovski/gostarter/genera
 
 ### Build and run
 
+#### run `make help` for more assistance on the make file. ####
+
 1. `make build` - To make and build the program using the `Makefile`.
 2. `make run` - To make and run the program using the `Makefile`.
 3. `make test` - To make and run the unit tests using the `Makefile`.
