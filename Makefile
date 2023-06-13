@@ -11,20 +11,21 @@ help:
 
 ## build - Builds the project in preparation for release
 build:
-	GOARCH=amd64 GOOS=darwin go build $(GOFLAGS) -o bin/${TARGET}-darwin main.go
-	GOARCH=amd64 GOOS=linux go build $(GOFLAGS) -o bin/${TARGET}-linux main.go
-	GOARCH=amd64 GOOS=windows go build $(GOFLAGS) -o bin/${TARGET}-windows main.go
+	go build $(GOFLAGS) -o bin/${TARGET} main.go
 
-## run - runs the program on the target platform
-run: build
-	./bin/${TARGET}-darwin 
+## buildandrun - builds and runs the program on the target platform
+buildandrun: build
+	./bin/${TARGET}
+
+## run - runs main.go for testing
+run: dep
+	go run main.go
+
 
 ## clean - Remove the old builds and any debug information
 clean:
 	go clean
-	rm bin/${TARGET}-darwin
-	rm bin/${TARGET}-linux
-	rm bin/${TARGET}-windows
+	rm bin/${TARGET}
 
 ## test - executes unit test
 test:
@@ -32,12 +33,18 @@ test:
 
 ## dep - fetches any external dependencies
 dep:
+	go mod tidy
 	go mod download
 
 ## vet - Vet examines Go source code and reports suspicious constructs
 vet:
 	go vet
 
-## lint - performs linting on the source files
-lint:
-	golangci-lint run --enable-all
+## staticcheck - Runs static code analyzer staticcheck
+staticcheck: 
+	go run honnef.co/go/tools/cmd/staticcheck@latest -checks=all,-ST1000,-U1000 ./...
+
+## tidy - format code and tidy modfile
+tidy:
+	go fmt ./...
+	go mod tidy -v
