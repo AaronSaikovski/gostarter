@@ -29,7 +29,7 @@ clean:
 
 ## test - executes unit test
 test:
-	go test ./... -coverprofile=coverage.out
+	go test ./...
 
 ## dep - fetches any external dependencies
 dep:
