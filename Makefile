@@ -2,16 +2,24 @@
 GO = go
 GOFLAGS = -ldflags="-s -w"
 
+#export PATH=$PATH:$HOME/go/bin;
+
 # Define the target executable
-TARGET = gostarter
+TARGET = gogoodwe
 
 ## help - Display help about make targets for this Makefile
 help:
 	@cat Makefile | grep '^## ' --color=never | cut -c4- | sed -e "`printf 's/ - /\t- /;'`" | column -s "`printf '\t'`" -t
 
-## build - Builds the project in preparation for release
-build:
+## release - Builds the project in preparation for release
+release:
 	go build $(GOFLAGS) -o bin/${TARGET} main.go
+	file bin/${TARGET}
+
+## debug - Builds the project in preparation for debug
+build:
+	go build -o bin/${TARGET} main.go
+	file bin/${TARGET}
 
 ## buildandrun - builds and runs the program on the target platform
 buildandrun: build
@@ -38,13 +46,17 @@ dep:
 
 ## vet - Vet examines Go source code and reports suspicious constructs
 vet:
-	go vet
+	go vet ./...
 
 ## staticcheck - Runs static code analyzer staticcheck
 staticcheck: 
 	go run honnef.co/go/tools/cmd/staticcheck@latest -checks=all,-ST1000,-U1000 ./...
 
-## tidy - format code and tidy modfile
-tidy:
+## seccheck - Code vulnerability check
+seccheck:	
+	govulncheck ./...
+
+## lint - format code and tidy modules
+lint:
 	go fmt ./...
 	go mod tidy -v
