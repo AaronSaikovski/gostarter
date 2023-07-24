@@ -13,9 +13,8 @@ help:
 
 ## release - Builds the project in preparation for release
 release:
-	go build $(GOFLAGS) -o bin/${TARGET} main.go
-	file bin/${TARGET}
-
+	goreleaser release --snapshot --clean
+	
 ## debug - Builds the project in preparation for debug
 build:
 	go build -o bin/${TARGET} main.go
@@ -33,6 +32,7 @@ run: dep
 ## clean - Remove the old builds and any debug information
 clean:
 	go clean
+	rm -rf dist
 	rm bin/${TARGET}
 
 ## test - executes unit test
