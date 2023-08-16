@@ -9,7 +9,7 @@ help:
 	@cat Makefile | grep '^## ' --color=never | cut -c4- | sed -e "`printf 's/ - /\t- /;'`" | column -s "`printf '\t'`" -t
 
 ## localrelease -  Builds the project in preparation for (local)release
-localrelease: vet lint staticcheck seccheck
+localrelease: vet lint seccheck
 	go build $(GOFLAGS) -o bin/${TARGET} ${MAINAPPPATH}
 	file bin/${TARGET}
 
@@ -49,8 +49,8 @@ dep:
 ## vet - Vet examines Go source code and reports suspicious constructs
 vet:
 	go vet ./...
-	
-## staticcheck - Runs static code analyzer staticcheck
+
+## staticcheck - Runs static code analyzer staticcheck - currently broken
 staticcheck: 	
 	go run honnef.co/go/tools/cmd/staticcheck@latest ./...
 
