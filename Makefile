@@ -37,9 +37,9 @@ clean:
 	rm -rf dist
 	rm bin/${TARGET}
 
-## test - executes unit tests
-test:
-	go test -v ./...
+## unittest - executes unit tests
+unittest:
+	go test -v ./test/...
 
 ## dep - fetches any external dependencies
 dep:

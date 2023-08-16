@@ -14,7 +14,7 @@ import (
 func TestSampleFunction(t *testing.T) {
 
 	msg := samplemodule.SampleFunction()
-	expected := "O1K"
+	expected := "OK"
 
 	if msg != expected {
 		t.Errorf("Module expected '%q' but got '%q'", expected, msg)
