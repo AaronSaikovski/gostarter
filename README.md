@@ -31,7 +31,7 @@ Click the [Use this template](https://github.com/AaronSaikovski/gostarter/genera
 
 ### Build and run
 
-#### run `make help` for more assistance on the make file. ####
+#### run `make help` for more assistance on the make file.
 
 1. `make build` - To make and build the program using the `Makefile`.
 2. `make run` - To make and run the program using the `Makefile`.
@@ -39,3 +39,8 @@ Click the [Use this template](https://github.com/AaronSaikovski/gostarter/genera
 4. `make clean` - To cleanup and delete all binaries using the `Makefile`.
 5. `make lint` - To lint the code using `golangci-lint` via the `Makefile`.
 6. `make dep` - To download all program dependencies using `Makefile`.
+
+## References
+
+* [Golang project Layout](https://github.com/golang-standards/project-layout)
+* [The one-and-only, must-have, eternal Go project layout](https://appliedgo.com/blog/go-project-layout)

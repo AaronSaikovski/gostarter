@@ -5,7 +5,7 @@ A Sample test harness.
 */
 
 import (
-	"github.com/AaronSaikovski/gostarter/cmd/gostarter"
+	"github.com/AaronSaikovski/gostarter/internal/app/constants"
 	"testing"
 )
 
@@ -13,7 +13,7 @@ import (
 func TestConstant(t *testing.T) {
 
 	expected := 10
-	if LoopConstant != expected {
-		t.Errorf("const expected '%d' but got '%d'", expected, LoopConstant)
+	if constants.LoopConstant != expected {
+		t.Errorf("const expected '%d' but got '%d'", expected, constants.LoopConstant)
 	}
 }

@@ -1,10 +1,6 @@
 # Define Go command and flags
 GO = go
 GOFLAGS = -ldflags="-s -w"
-
-#export PATH=$PATH:$HOME/go/bin;
-
-# Define the target executable
 TARGET = gostarter
 MAINAPPPATH = ./cmd/gostarter/main.go
 
@@ -41,9 +37,9 @@ clean:
 	rm -rf dist
 	rm bin/${TARGET}
 
-## test - executes unit test
+## test - executes unit tests
 test:
-	go test ./...
+	go test -v ./...
 
 ## dep - fetches any external dependencies
 dep:
