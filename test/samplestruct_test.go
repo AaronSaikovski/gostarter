@@ -2,7 +2,7 @@
 A Sample test harness.
 */
 
-package types
+package testing
 
 import (
 	"testing"

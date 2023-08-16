@@ -1,10 +1,11 @@
-package constants
+package testing
 
 /*
 A Sample test harness.
 */
 
 import (
+	"github.com/AaronSaikovski/gostarter/cmd/gostarter"
 	"testing"
 )
 

@@ -5,7 +5,8 @@ GOFLAGS = -ldflags="-s -w"
 #export PATH=$PATH:$HOME/go/bin;
 
 # Define the target executable
-TARGET = gogoodwe
+TARGET = gostarter
+MAINAPPPATH = ./cmd/gostarter/main.go
 
 ## help - Display help about make targets for this Makefile
 help:
@@ -13,7 +14,7 @@ help:
 
 ## localrelease -  Builds the project in preparation for (local)release
 localrelease: vet lint staticcheck seccheck
-	go build $(GOFLAGS) -o bin/${TARGET} main.go
+	go build $(GOFLAGS) -o bin/${TARGET} ${MAINAPPPATH}
 	file bin/${TARGET}
 
 ## release - Builds the project in preparation for release
@@ -22,7 +23,7 @@ release:
 	
 ## debug - Builds the project in preparation for debug
 build:
-	go build -o bin/${TARGET} main.go
+	go build -o bin/${TARGET} ${MAINAPPPATH}
 	file bin/${TARGET}
 
 ## buildandrun - builds and runs the program on the target platform
@@ -31,7 +32,7 @@ buildandrun: build
 
 ## run - runs main.go for testing
 run: dep
-	go run main.go
+	go run ${MAINAPPPATH}
 
 
 ## clean - Remove the old builds and any debug information
