@@ -15,7 +15,7 @@ localrelease: vet lint staticcheck seccheck
 
 ## release - Builds the project in preparation for release
 release:
-	goreleaser release --snapshot --clean
+	goreleaser release --snapshot --clean 
 	
 ## debug - Builds the project in preparation for debug
 build:
@@ -49,10 +49,10 @@ dep:
 ## vet - Vet examines Go source code and reports suspicious constructs
 vet:
 	go vet ./...
-
+	
 ## staticcheck - Runs static code analyzer staticcheck
-staticcheck: 
-	go run honnef.co/go/tools/cmd/staticcheck@latest -checks=all,-ST1000,-U1000 ./...
+staticcheck: 	
+	go run honnef.co/go/tools/cmd/staticcheck@latest ./...
 
 ## seccheck - Code vulnerability check
 seccheck:	
