@@ -4,14 +4,15 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/AaronSaikovski/gostarter/constants"
-	"github.com/AaronSaikovski/gostarter/pkg/samplemodule"
-	"github.com/AaronSaikovski/gostarter/pkg/utils"
-	"github.com/AaronSaikovski/gostarter/types"
-
+	"github.com/AaronSaikovski/gostarter/internal/pkg/samplemodule"
+	"github.com/AaronSaikovski/gostarter/internal/pkg/utils"
 	"github.com/logrusorgru/aurora"
+
+	"github.com/AaronSaikovski/gostarter/internal/app/constants"
+	"github.com/AaronSaikovski/gostarter/internal/app/types"
 )
 
+// run - main run method
 func run() error {
 
 	fmt.Println(aurora.BrightGreen(string("This is the main function.\n")))

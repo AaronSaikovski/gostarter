@@ -1,4 +1,4 @@
-package samplemodule
+package testing
 
 /*
 A Sample test harness.
@@ -6,12 +6,14 @@ A Sample test harness.
 
 import (
 	"testing"
+
+	"github.com/AaronSaikovski/gostarter/internal/pkg/samplemodule"
 )
 
 // A testing function.
 func TestSampleFunction(t *testing.T) {
 
-	msg := SampleFunction()
+	msg := samplemodule.SampleFunction()
 	expected := "OK"
 
 	if msg != expected {

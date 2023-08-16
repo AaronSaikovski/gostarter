@@ -1,7 +1,7 @@
 package types
 
 /*
-A Sample module.
+Sample structs
 */
 
 // Sample - A sample struct.
