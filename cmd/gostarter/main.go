@@ -12,6 +12,7 @@ import (
 	"github.com/AaronSaikovski/gostarter/internal/app/types"
 )
 
+// run - main run method
 func run() error {
 
 	fmt.Println(aurora.BrightGreen(string("This is the main function.\n")))
