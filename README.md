@@ -5,7 +5,6 @@
 A simple Golang project template to save you time and energy.
 
 [![Build Status](https://github.com/AaronSaikovski/gostarter/workflows/build/badge.svg)](https://github.com/AaronSaikovski/gostarter/actions)
-[![Coverage Status](https://coveralls.io/repos/github/AaronSaikovski/gostarter/badge.svg?branch=main)](https://coveralls.io/github/AaronSaikovski/gostarter?branch=main)
 [![Licence](https://img.shields.io/github/license/AaronSaikovski/gostarter)](LICENSE)
 
 </div>
@@ -42,5 +41,5 @@ Click the [Use this template](https://github.com/AaronSaikovski/gostarter/genera
 
 ## References
 
-* [Golang project Layout](https://github.com/golang-standards/project-layout)
-* [The one-and-only, must-have, eternal Go project layout](https://appliedgo.com/blog/go-project-layout)
+- [Golang project Layout](https://github.com/golang-standards/project-layout)
+- [The one-and-only, must-have, eternal Go project layout](https://appliedgo.com/blog/go-project-layout)
