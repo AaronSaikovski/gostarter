@@ -38,8 +38,10 @@ Click the [Use this template](https://github.com/AaronSaikovski/gostarter/genera
 4. `make clean` - To cleanup and delete all binaries using the `Makefile`.
 5. `make lint` - To lint the code using `golangci-lint` via the `Makefile`.
 6. `make dep` - To download all program dependencies using `Makefile`.
+7. `make depupdate` - Upgrades all dependencies to the latest or minor patch release using `Makefile`.
 
 ## References
 
 - [Golang project Layout](https://github.com/golang-standards/project-layout)
 - [The one-and-only, must-have, eternal Go project layout](https://appliedgo.com/blog/go-project-layout)
+- [How To Upgrade Golang Dependencies](https://golang.cafe/blog/how-to-upgrade-golang-dependencies.html)
