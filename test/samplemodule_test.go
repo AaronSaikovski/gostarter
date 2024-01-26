@@ -7,7 +7,7 @@ A Sample test harness.
 import (
 	"testing"
 
-	"github.com/AaronSaikovski/gostarter/internal/pkg/samplemodule"
+	"github.com/AaronSaikovski/gostarter/pkg/samplemodule"
 )
 
 // A testing function.
