@@ -21,15 +21,29 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package utils
+
+package main
 
 import (
-	"log"
+	_ "embed"
+	"os"
 
-	"github.com/logrusorgru/aurora"
+	"github.com/AaronSaikovski/gostarter/pkg/utils"
+
+	"github.com/AaronSaikovski/gostarter/cmd/app"
 )
 
-// HandleError - Generic error handler
-func HandleError(err error) {
-	log.Fatal(aurora.BrightRed(err.Error()))
+//ref: https://levelup.gitconnected.com/a-better-way-than-ldflags-to-add-a-build-version-to-your-go-binaries-2258ce419d2d
+
+//go:generate bash get_version.sh
+//go:embed version.txt
+var version string
+
+// main - program main
+func main() {
+
+	if err := app.Run(version); err != nil {
+		utils.HandleError(err)
+		os.Exit(1)
+	}
 }

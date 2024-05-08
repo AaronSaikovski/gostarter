@@ -21,15 +21,32 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package utils
+
+package app
 
 import (
-	"log"
+	"fmt"
 
+	"github.com/AaronSaikovski/gostarter/pkg/samplemodule"
 	"github.com/logrusorgru/aurora"
+
+	"github.com/AaronSaikovski/gostarter/constants"
+	"github.com/AaronSaikovski/gostarter/types"
 )
 
-// HandleError - Generic error handler
-func HandleError(err error) {
-	log.Fatal(aurora.BrightRed(err.Error()))
+// run - main run method
+func Run(versionString string) error {
+
+	fmt.Println(aurora.BrightGreen(string("This is the main function.\n")))
+	fmt.Printf("version: %s\n", versionString)
+
+	for i := 0; i < constants.LoopConstant; i++ {
+		fmt.Printf("print using loop const \n")
+	}
+
+	samplemodule.SampleFunction()
+
+	fmt.Print(types.Sample{SampleString: "hello from struct", SampleInt: 1})
+
+	return nil
 }
